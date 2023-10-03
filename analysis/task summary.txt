@@ -1,0 +1,30 @@
+inputs : volunteer name, coin type, weight of bag 
+make sure the type of coin is a valid input eg £2 or 5ps
+say if bag is underweight or overweight 
+say how much needs to be added or removed in wieght
+store the total of all bags as a variable 
+monitor accuracy of volunteers 
+provide an option to display how many bags a volunteer has counter and percentage of weight accuracy 
+be able to sort the volunteers on accuracy
+save data in text file called coincount.text
+load coincount at the beginning of each sessions and update it at the end
+
+
+
+store volunteer data in a table 
+
+volunteer_name | bags counted | accuracy
+dave           | 7            | 70%
+
+variables 
+    user input variables:
+        volunteer names, coin type , weight of bag
+    volunteer variables:
+        bags counted, accuracy
+    other variables:
+        total money of all bags 
+    
+constants
+    coin types [1p,2p,5p,10p,20p,50p,£1,£2]
+    coin weights [1p=,]
+    bag type weight 
