@@ -17,3 +17,5 @@ with open('save_test.txt', 'a') as file:  # Open the file in append mode
 
 #need to create accuracy variable and bags counted unique to the volunteer
 #add bags counted collum
+
+accuracy = bags_correct / totalbags
