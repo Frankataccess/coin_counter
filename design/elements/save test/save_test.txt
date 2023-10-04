@@ -1,0 +1,5 @@
+Name                 coin                 bag weight           accuracy  
+John                 0.5                  220                  40        
+John                 0.5                  220                  40        
+John                 0.5                  220                  40        
+frank                5p                   200                  100       
