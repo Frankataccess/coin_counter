@@ -1,2 +1,2 @@
-Name                 coin                 bag weight           accuracy             bags counted
-test                 test                 test                 10                   0         
+Name                 coin                 bag weight           accuracy             bags correct         bags counted
+test                 5p                   180                  10                   0                    1         
