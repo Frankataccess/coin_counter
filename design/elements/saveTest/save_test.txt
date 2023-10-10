@@ -1,2 +1,3 @@
 Name                 coin                 bag weight           accuracy             bags correct         bags counted
-test                 5p                   180                  10                   0                    1         
+matus                5p                   235                  100.0                1                    1         
+matus                1p                   69                   50.0                 1                    2         
