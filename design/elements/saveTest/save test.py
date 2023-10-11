@@ -1,3 +1,4 @@
+
 # Define the data for the table as a list of lists £
 total_value = 0
 table_data = [["Name", "coin", "bag weight", "accuracy","bags correct", "bags counted","total bags","total value"]]
@@ -134,7 +135,7 @@ print("total bags: ", total_bags)
 
 # Adding new line
 new_person = [volunteer_name, coin_type, volunteer_bag_weight, accuracy, bags_correct, bags_counted, total_bags ,total_value ]
-formatted_new_person = "{: <20} {: <20} {: <20} {: <20} {: <20} {: <20} {: <10}".format(*new_person)
+formatted_new_person = "{: <20} {: <20} {: <20} {: <20} {: <20} {: <20} {: <20} {: <10}".format(*new_person)
 
 # Append the new row to the file
 with open("save_test.txt", 'a') as file:
