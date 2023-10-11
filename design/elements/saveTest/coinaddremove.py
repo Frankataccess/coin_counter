@@ -1,41 +1,39 @@
-volunteer_bag_weight = int(input("enter bag weight"))
+coin_info = {
+    "1p": [356,3.56],
+    "2p": [356,7.12],
+    "5p": [235,2.35],
+    "10p": [325,6.50],
+    "20p": [250,5],
+    "50p": [160,18],
+    "£1": [175,8.75],
+    "£2": [120,12]
+}
+
+
 coin_type = input("enter coin type")
+volunteer_bag_weight = float(input("enter bag weight"))
 
-coin_weights = {
-    "1p": 3.56,
-    "2p": 7.12,
-    "5p": 2.35,
-    "10p": 6.50,
-    "20p": 5,
-    "50p": 18,
-    "£1": 8.75,
-    "£2": 12
-}
-for coin_type in coin_weights:
-    coin_weight = coin_weights[coin_type]
 
-correct_bag_weights = {
-    "1p": 356,
-    "2p": 356,
-    "5p": 235,
-    "10p": 325,
-    "20p": 250,
-    "50p": 160,
-    "£1": 175,
-    "£2": 120
-}
 
 # Check if the coin type is valid
-if coin_type in correct_bag_weights:
-    correct_bag_weight = correct_bag_weights[coin_type]
+if coin_type in coin_info:
+  key = coin_info[coin_type]
+  correct_bag_weight = key[0]
+  coin_weight = key[1]
 else:
     print("Please enter a valid coin type")
     exit()
 #is bag too heavy or light?
 if volunteer_bag_weight > correct_bag_weight:
     remove_coin = (volunteer_bag_weight - correct_bag_weight) / coin_weight
+    remove_coin= round(remove_coin)
+    print("you need to remove ",remove_coin," coins")
 elif volunteer_bag_weight < correct_bag_weight:
-    print()
-else:
-    print()
+    remove_coin = (correct_bag_weight - volunteer_bag_weight) / coin_weight
+    remove_coin= round(remove_coin)
+    print("you need to add ",remove_coin," coins")
+else: 
+    print("perfect")
 print(correct_bag_weight)
+print(coin_weight)
+print()

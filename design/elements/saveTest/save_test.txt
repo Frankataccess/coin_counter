@@ -1,3 +1,2 @@
-Name                 coin                 bag weight           accuracy             bags correct         bags counted
-matus                5p                   235                  100.0                1                    1         
-matus                1p                   69                   50.0                 1                    2         
+Name                 coin                 bag weight           accuracy             bags correct         bags counted         total value
+Frank                1p                   356.0                100.0                1                    1                    1         
