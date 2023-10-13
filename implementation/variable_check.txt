@@ -1,0 +1,13 @@
+        # Variable check copy and paste
+
+        print("bags correct:", bags_correct)
+        print("bags counted:", bags_counted)
+        print("volunteer bag weight:", volunteer_bag_weight)
+        print("correct bag weight", correct_bag_weight)
+        print("accuracy:", accuracy)
+        print("correct bag weight: ",correct_bag_weight)
+        print("coin weight: ",coin_weight)
+        print("old sum: ",old_sum)
+        print("new sum:",new_sum)
+        print("total value:",total_value)
+        print("total bags: ", total_bags)

@@ -1,3 +1,3 @@
 Name                 coin                 bag weight           accuracy             bags correct         bags counted         total bags           total value
 Frank                5p                   255.0                0.0                  0                    1                    1                    5         
-Frank                5p                   690.0                0.0                  0                    2                    2                    10        
+Dave                 5p                   690.0               10.0                  0                    2                    2                    10        
