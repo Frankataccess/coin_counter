@@ -1,4 +1,0 @@
-Name                 coin                 bag weight           accuracy  
-Alice                1                    300                  90        
-Bob                  0.20                 235                  100       
-Charly               0.05                 300                  70        

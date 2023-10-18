@@ -1,7 +1,26 @@
 #pre defs
 import os
+
+# Define the data for the table as a list of lists 
+total_value = 0
+table_data = [["Name", "coin", "bag weight", "accuracy","bags correct", "bags counted","total bags","total value"]]
+
+# File check
+
+file_path = "CoinCount.txt"
+
+if os.path.exists(file_path):
+    print("File exists")
+else:
+    print("File not found")
+    with open("CoinCount.txt", "w") as file:
+        # Write header row to the file
+        formatted_header = "{: <20} {: <20} {: <20} {: <20} {: <20} {: <20} {: <20} {: <10}".format(*table_data[0])
+        file.write(formatted_header + "\n")
+    print("New file has been created")
+
 #open file so total value and total bags is defined
-with open('CoinCount0.1.txt', 'r') as file:
+with open('CoinCount.txt', 'r') as file:
     # Initialize the sum to 0
     total_value_callable = 0
     total_bags_callable = 0
@@ -21,7 +40,7 @@ with open('CoinCount0.1.txt', 'r') as file:
         total_bags_callable = int(values[6])
 
 #sorting
-with open('CoinCount0.1.txt', 'r') as file:
+with open('CoinCount.txt', 'r') as file:
     lines = file.readlines()
 # Split lines into a list of lists based on whitespace (assuming space-separated values)
 list_of_lists = [line.strip().split() for line in lines[1:]]  # Skip the header line
@@ -29,9 +48,7 @@ list_of_lists = [line.strip().split() for line in lines[1:]]  # Skip the header 
 # Sort the list of lists by the accuracy column (assuming accuracy is the fourth column, index 3)
 sorted_list_of_lists = sorted(list_of_lists, key=lambda x: float(x[3]), reverse=True)
 
-# Define the data for the table as a list of lists 
-total_value = 0
-table_data = [["Name", "coin", "bag weight", "accuracy","bags correct", "bags counted","total bags","total value"]]
+
 # Define correct bag weights
 coin_info = {
         "1p": [356,3.56,1],
@@ -47,19 +64,7 @@ coin_info = {
 old_sum = 0
 old_total_bags = 0
 
-# File check
 
-file_path = "CoinCount0.1.txt"
-
-if os.path.exists(file_path):
-    print("File exists")
-else:
-    print("File not found")
-    with open("CoinCount0.1.txt", "w") as file:
-        # Write header row to the file
-        formatted_header = "{: <20} {: <20} {: <20} {: <20} {: <20} {: <20} {: <20} {: <10}".format(*table_data[0])
-        file.write(formatted_header + "\n")
-    print("New file has been created")
 
 
 
@@ -83,14 +88,22 @@ while  True:
             formatted_row = "{: <20} {: <20} {: <20} {: <20} {: <20} {: <20} {: <20} {: <10}".format(*row)
             print(formatted_row)
     elif choice == "T":
-            with open("CoinCount0.1.txt", 'r') as file:
+            with open("CoinCount.txt", 'r') as file:
                 # Read the contents of the file
                 file_contents = file.read()
                 # Print the contents to the terminal
                 print(file_contents)
     elif choice == "N":
         # Gather volunteer information/ inputs
-        volunteer_name = input("Enter volunteer name: ")
+        while True:
+            volunteer_name = input("Enter volunteer name: ")
+            if volunteer_name.isalpha() ==True or volunteer_name.isupper() == True:
+                if len(volunteer_name) < 15:
+                   break
+                else:
+                    print("Please enter a shorter name")
+            else:
+                print("Please enter a valid name with only letters")
 
         #coin type check
 
@@ -112,15 +125,19 @@ while  True:
             
         #volunteer bag weight check
         while True:
-            try:
-                volunteer_bag_weight = float(input("Enter bag weight in grams: "))
-                break
-            except ValueError:
-                print("Error please enter just the integer of the weight in grams")
+            volunteer_bag_weight = str(input("Enter bag weight in grams: "))
+            if len(volunteer_bag_weight) > 3:
+                print("Please enter a valid bag wieght")
+            else:
+                try:
+                    volunteer_bag_weight = float(volunteer_bag_weight)
+                    break
+                except ValueError:
+                    print("Error please enter just the integer of the weight to the nearest grams")
         bags_correct = 0
 
         #bag counter 
-        with open("CoinCount0.1.txt", 'r') as file:
+        with open("CoinCount.txt", 'r') as file:
             for line in file:
                 # Split the line into columns
                 columns = line.strip().split()
@@ -133,7 +150,7 @@ while  True:
                 bags_counted = 1
             
         #old sum
-        with open('CoinCount0.1.txt', 'r') as file:
+        with open('CoinCount.txt', 'r') as file:
 
             # Flag to indicate whether to ignore the first row
             ignore_first_row = True
@@ -168,7 +185,7 @@ while  True:
         bags_counted = 0
 
         # Read file and update counts
-        with open("CoinCount0.1.txt", 'r') as file:
+        with open("CoinCount.txt", 'r') as file:
             for line in file:
                 columns = line.strip().split()
                 if columns[0] == volunteer_name:
@@ -197,7 +214,7 @@ while  True:
         formatted_new_person = "{: <20} {: <20} {: <20} {: <20} {: <20} {: <20} {: <20} {: <10}".format(*new_person)
 
         # Append the new row to the file
-        with open("CoinCount0.1.txt", 'a') as file:
+        with open("CoinCount.txt", 'a', encoding='utf-8') as file:
             file.write(formatted_new_person + "\n")
 
         print("Data has been added to the file.")

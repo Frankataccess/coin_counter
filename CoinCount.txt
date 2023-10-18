@@ -1,4 +1,0 @@
-Name                 coin                 bag weight           accuracy             bags correct         bags counted         total bags           total value
-kevin                10p                  100.0                0.0                  0                    1                    1                    5         
-frank                5p                   100.0                0.0                  0                    1                    1                    5         
-Frank                10p                  100.0                0.0                  0                    1                    1                    5         
